@@ -24,6 +24,10 @@ group :development do
   gem 'spring'
 end
 
+group :development, :test do
+  gem 'rspec-rails', '~> 6.1'
+end
+
 gem 'capistrano', '~> 3.14', require: false
 gem 'capistrano3-puma', '6.0.0.beta.1', require: false
 gem 'capistrano-rails', '~> 1.6', require: false

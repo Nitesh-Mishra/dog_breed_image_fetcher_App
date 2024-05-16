@@ -2,7 +2,6 @@
 
 role :web, ['43.205.0.20']
 role :app, ['43.205.0.20']
-role :db,  '43.205.0.20', primary: true
 
 set :ssh_options, {
   user: 'ubuntu',
