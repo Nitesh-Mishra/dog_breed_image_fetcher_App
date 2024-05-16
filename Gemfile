@@ -29,3 +29,4 @@ gem 'capistrano3-puma', '6.0.0.beta.1', require: false
 gem 'capistrano-rails', '~> 1.6', require: false
 gem 'capistrano-rvm', '~> 0.1.2', require: false
 gem 'httparty', '~> 0.21.0'
+gem 'sd_notify', '~> 0.1.1', require: false
