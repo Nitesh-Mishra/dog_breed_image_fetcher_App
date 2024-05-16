@@ -24,4 +24,8 @@ group :development do
   gem 'spring'
 end
 
+gem 'capistrano', '~> 3.14', require: false
+gem 'capistrano3-puma', '6.0.0.beta.1', require: false
+gem 'capistrano-rails', '~> 1.6', require: false
+gem 'capistrano-rvm', '~> 0.1.2', require: false
 gem 'httparty', '~> 0.21.0'
