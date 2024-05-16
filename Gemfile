@@ -24,5 +24,4 @@ group :development do
   gem 'spring'
 end
 
-gem 'bootstrap', '~> 5.1.3'
-gem 'httparty', '~> 0.13.7'
+gem 'httparty', '~> 0.21.0'

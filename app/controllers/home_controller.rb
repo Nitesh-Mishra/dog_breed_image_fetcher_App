@@ -2,21 +2,15 @@
 
 class HomeController < ApplicationController
   def index
-    @breed = params[:breed]
-    return unless @breed.present?
+    return if params[:breed].blank?
 
-    fetch_breed_image
-    render json: { breed: @breed, image: @image_url }
+    data = DogBreedImageFetcherService.new.format(index_params)
+    render json: data
   end
 
   private
 
-  def fetch_breed_image
-    response = HTTParty.get("https://dog.ceo/api/breed/#{@breed.downcase}/images/random")
-    @image_url = if response.success?
-                   response.parsed_response['message']
-                 else
-                   'https://via.placeholder.com/400x300?text=No+Image+Found'
-                 end
+  def index_params
+    params.permit(:breed, :fetch_type)
   end
 end

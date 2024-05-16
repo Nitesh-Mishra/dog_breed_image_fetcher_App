@@ -1,24 +1,33 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Dog Breed Image Fetcher App
 
-Things you may want to cover:
+This Ruby on Rails application enables users to search for images of dog breeds. Users can simply enter the breed name into a form and select whether they want to fetch a random image or all images of that breed. Upon submission of the form, the application retrieves the specified breed's image from the Dog API (https://dog.ceo/dog-api/) based on the user's selection, and displays it on the page."
 
-* Ruby version
 
-* System dependencies
+### Technologies Used
 
-* Configuration
+- Ruby on Rails
+- Bootstrap (for styling)
+- Git (for version control)
 
-* Database creation
+### Setup
 
-* Database initialization
+- Clone the repository:
 
-* How to run the test suite
+- Navigate to the project directory:
 
-* Services (job queues, cache servers, search engines, etc.)
+- Install the dependencies:
+`bundle install`
 
-* Deployment instructions
+- Start the Rails server:
+`rails s`
 
-* ...
+- Open your web browser and navigate to `http://localhost:3000`.
+
+### Testing
+- Execute the test suite with the following command:
+
+
+### Deployment instructions
+
