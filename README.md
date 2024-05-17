@@ -1,6 +1,6 @@
 ## Dog Breed Image Fetcher App
 
-### Overview
+### Overview:
 This Ruby on Rails application allows users to search for and fetch images of various dog breeds. Users can enter a breed name into a form and choose whether they want to retrieve a random image or all available images for that breed. Upon submitting the form, the application will fetch the requested image(s) from the Dog API (https://dog.ceo/dog-api/) and display them on the page, if requested image is not present in the api then display the default not found image.
 
 ### Technologies Used:
@@ -39,6 +39,5 @@ This Ruby on Rails application allows users to search for and fetch images of va
 - Update the `deploy_to` and `base_path` variables in the `config/deploy.rb` file.
 - Update the ip address of the server for the `app` and `web` role in `config/deploy/production.rb` file.
 - Update the SSH keys within the `ssh_options` section in the `config/deploy/production.rb` file.
-- Execute the following command to deploy the changes to the server: 
-  - `cap production deploy`
+- Execute `cap production deploy` to deploy the changes to the server.
 
