@@ -1,9 +1,7 @@
-# README
-
 ## Dog Breed Image Fetcher App
 
-This Ruby on Rails application enables users to search for images of dog breeds. Users can simply enter the breed name into a form and select whether they want to fetch a random image or all images of that breed. Upon submission of the form, the application retrieves the specified breed's image from the Dog API (https://dog.ceo/dog-api/) based on the user's selection, and displays it on the page."
-
+### Overview
+This Ruby on Rails application allows users to search for and fetch images of various dog breeds. Users can enter a breed name into a form and choose whether they want to retrieve a random image or all available images for that breed. Upon submitting the form, the application will fetch the requested image(s) from the Dog API (https://dog.ceo/dog-api/) and display them on the page, if requested image is not present in the api then display the default not found image.
 
 ### Technologies Used:
 
@@ -11,34 +9,36 @@ This Ruby on Rails application enables users to search for images of dog breeds.
 - Bootstrap
 - Jquery
 
-### Setup:
+### Setup Instructions:
 
 - Clone the repository:
 `https://github.com/Nitesh-Mishra/dog_breed_image_fetcher_App.git`
 
-- Navigate to the project directory
+- Navigate to the project directory:
+`cd dog_breed_image_fetcher_App`
 
-- Install the dependencies:
+- Install the required dependencies:
 `bundle install`
 
 - Start the Rails server:
 `rails s`
 
-- Open your web browser and navigate to `http://localhost:3000`.
+- Open your web browser and navigate to `http://localhost:3000` to access the application.
 
-### Testcases:
-- Execute the test cases with the following command:
+### Running Tests:
+- To execute the test cases, follow these commands:
 
-  - To test the controller:
+  - For testing the controller:
     - `rspec test/controllers/home_controller_test.rb`
 
-  - To test the service:
+  - For testing the service:
     - `rspec test/services/dog_breed_image_fetcher_service_test.rb`
 
 
 ### Deployment instructions:
-- Update `deploy_to` and `base_path` variables in the `config/deploy.rb` file.
-- Update the ip address of the server for `app` and `web` role in `config/deploy/production.rb` file.
+- Update the `deploy_to` and `base_path` variables in the `config/deploy.rb` file.
+- Update the ip address of the server for the `app` and `web` role in `config/deploy/production.rb` file.
 - Update the SSH keys within the `ssh_options` section in the `config/deploy/production.rb` file.
-- Execute `cap production deploy` to deploy the changes to the server.
+- Execute the following command to deploy the changes to the server: 
+  - `cap production deploy`
 
