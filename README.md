@@ -5,13 +5,13 @@
 This Ruby on Rails application enables users to search for images of dog breeds. Users can simply enter the breed name into a form and select whether they want to fetch a random image or all images of that breed. Upon submission of the form, the application retrieves the specified breed's image from the Dog API (https://dog.ceo/dog-api/) based on the user's selection, and displays it on the page."
 
 
-### Technologies Used
+### Technologies Used:
 
 - Ruby on Rails
-- Bootstrap (for styling)
-- Git (for version control)
+- Bootstrap
+- Jquery
 
-### Setup
+### Setup:
 
 - Clone the repository:
 `https://github.com/Nitesh-Mishra/dog_breed_image_fetcher_App.git`
@@ -26,14 +26,14 @@ This Ruby on Rails application enables users to search for images of dog breeds.
 
 - Open your web browser and navigate to `http://localhost:3000`.
 
-### Testcases
+### Testcases:
 - Execute the test cases with the following command:
 
-- To test the service run:
-  - `rspec test/controllers/home_controller_test.rb`
+  - To test the controller:
+    - `rspec test/controllers/home_controller_test.rb`
 
-- To test the service run:
-  - `rspec test/services/dog_breed_image_fetcher_service_test.rb`
+  - To test the service:
+    - `rspec test/services/dog_breed_image_fetcher_service_test.rb`
 
 
 ### Deployment instructions:

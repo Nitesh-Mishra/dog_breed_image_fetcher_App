@@ -7,7 +7,7 @@ RSpec.describe DogBreedImageFetcherService, type: :service do
     let(:service) { DogBreedImageFetcherService.new }
 
     context 'when fetch_type is random and breed name is present in the api' do
-      it 'returns a hash with breed name and random image URL' do
+      it 'returns a hash with breed name and a random image URL' do
         result = service.format(breed: 'african', fetch_type: 'random')
         expect(result[:images].length).to eq(1)
         expect(result[:breed]).to eq('african')
@@ -16,14 +16,14 @@ RSpec.describe DogBreedImageFetcherService, type: :service do
     end
 
     context 'when fetch_type is random and breed name is not present in the api' do
-      it 'returns a hash with breed name and random image URL' do
+      it 'returns default not found image URL' do
         result = service.format(breed: 'asian', fetch_type: 'random')
         expect(result[:images].length).to eq(1)
         expect(result[:images]).to eq([DogBreedImageFetcherService::DEFAULT_IMAGE])
       end
     end
 
-    context 'when fetch_type is all images of a breed' do
+    context 'when fetch_type is all images of the breed and breed name is present in the api' do
       it 'returns a hash with breed name and all image URLs' do
         result = service.format(breed: 'african', fetch_type: 'all')
         expect(result[:images].length).to be > 1
@@ -33,7 +33,7 @@ RSpec.describe DogBreedImageFetcherService, type: :service do
     end
 
     context 'when fetch_type is all images and breed name is not present in the api' do
-      it 'returns a hash with breed name and random image URL' do
+      it 'returns default not found image URL' do
         result = service.format(breed: 'asian', fetch_type: 'all')
         expect(result[:images].length).to eq(1)
         expect(result[:images]).to eq([DogBreedImageFetcherService::DEFAULT_IMAGE])
@@ -44,8 +44,8 @@ RSpec.describe DogBreedImageFetcherService, type: :service do
   describe '#fetch_random_image_of_a_breed' do
     let(:service) { DogBreedImageFetcherService.new }
 
-    context 'when data from breed name is present in the api' do
-      it 'returns an array containing the random image URL' do
+    context 'when data for breed name is present in the api' do
+      it 'returns an array containing the random image URL of that breed' do
         result = service.fetch_random_image_of_a_breed('african')
 
         expect(result.length).to eq(1)
@@ -54,7 +54,7 @@ RSpec.describe DogBreedImageFetcherService, type: :service do
     end
 
     context 'when data from breed name is not present in the api' do
-      it 'returns an array containing the default image URL' do
+      it 'returns an array containing the default not found image URL' do
         result = service.fetch_random_image_of_a_breed('asian')
         expect(result.length).to eq(1)
         expect(result).to eq([DogBreedImageFetcherService::DEFAULT_IMAGE])
@@ -65,8 +65,8 @@ RSpec.describe DogBreedImageFetcherService, type: :service do
   describe '#fetch_all_images_of_a_breed' do
     let(:service) { DogBreedImageFetcherService.new }
 
-    context 'when data from breed name is present in the api' do
-      it 'returns an array containing the random image URL' do
+    context 'when data for breed name is present in the api' do
+      it 'returns an array containing all the image URLs of that breed' do
         result = service.fetch_all_images_of_a_breed('african')
 
         expect(result.length).to be > 1
@@ -75,7 +75,7 @@ RSpec.describe DogBreedImageFetcherService, type: :service do
     end
 
     context 'when data from breed name is not present in the api' do
-      it 'returns an array containing the default image URL' do
+      it 'returns an array containing the default not found image URL' do
         result = service.fetch_all_images_of_a_breed('asian')
         expect(result.length).to eq(1)
         expect(result).to eq([DogBreedImageFetcherService::DEFAULT_IMAGE])
